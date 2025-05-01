@@ -1,1 +1,99 @@
-/* You can add global styles to this file, and also import other style files */
+.travel-entry-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #333;
+  }
+
+  .entry {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+
+    img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin: 0.5rem 0;
+      color: #444;
+    }
+
+    .actions {
+      margin-top: 0.5rem;
+
+      button {
+        margin-right: 0.5rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+        &.edit {
+          background-color: #007bff;
+          color: #fff;
+
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+
+        &.delete {
+          background-color: #dc3545;
+          color: #fff;
+
+          &:hover {
+            background-color: #a71d2a;
+          }
+        }
+      }
+    }
+  }
+
+  form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    input,
+    textarea {
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    button.save {
+      margin-top: 1.5rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: #1e7e34;
+      }
+    }
+  }
+}

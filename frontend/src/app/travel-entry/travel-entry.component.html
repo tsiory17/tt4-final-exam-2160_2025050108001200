@@ -1,0 +1,56 @@
+<!-- Form for updating travel entry -->
+<div *ngIf="updatedEntry.id">
+  <h3>Update Entry</h3>
+  <form (ngSubmit)="saveUpdatedEntry()">
+    <label for="destination">Destination:</label>
+    <input
+      type="text"
+      id="destination"
+      [(ngModel)]="updatedEntry.location"
+      name="destination"
+      required
+    />
+
+    <label for="date">Date:</label>
+    <input
+      type="date"
+      id="date"
+      [(ngModel)]="updatedEntry.date"
+      name="date"
+      required
+    />
+
+    <label for="photos">Photos URL:</label>
+    <input
+      type="text"
+      id="photos"
+      [(ngModel)]="updatedEntry.photos"
+      name="photos"
+    />
+
+    <label for="description">Description:</label>
+    <textarea
+      id="description"
+      [(ngModel)]="updatedEntry.description"
+      name="description"
+    ></textarea>
+
+    <button type="submit">Save</button>
+  </form>
+</div>
+
+<!-- Display existing entries -->
+<div *ngIf="entries.length > 0; else noEntries">
+  <div *ngFor="let entry of entries">
+    <h2>{{ entry.location }}</h2>
+    <p>{{ entry.date | date: 'longDate' }}</p>
+    <img *ngIf="entry.photos" [src]="entry.photos" alt="photo" />
+    <p>{{ entry.description }}</p>
+    <button (click)="onUpdateEntry(entry.id)">Update</button>
+    <button (click)="onDeleteEntry(entry.id)">Delete</button>
+  </div>
+</div>
+
+<ng-template #noEntries>
+  <p>No travel entries available.</p>
+</ng-template>
