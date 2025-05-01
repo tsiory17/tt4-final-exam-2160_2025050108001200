@@ -13,7 +13,7 @@ namespace backend.Data
 
         }
 
-        public DbSet<TravelEntry> TravelEntrys { get; set; }
+        public DbSet<TravelEntry> TravelEntries { get; set; }
     }
 
 }

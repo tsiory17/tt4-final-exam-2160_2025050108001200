@@ -32,10 +32,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(); // API Documentation
+builder.Services.AddSwaggerGen(); 
 
 
-// ---
 
 var app = builder.Build();
 
